@@ -1,21 +1,18 @@
 const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
 
-function task1(done) {
-    console.log('Task 1 выполнен!');
+function serve(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+
+    gulp.watch("index.html").on('change', browserSync.reload);
+    gulp.watch("style.css").on('change', browserSync.reload);
+    gulp.watch("script.js").on('change', browserSync.reload);
+    
     done();
 }
 
-function task2(done) {
-    console.log('Task 2 выполнен!');
-    done();
-}
-
-// Последовательное выполнение задач
-const sequenceTasks = gulp.series(task1, task2);
-
-// Параллельное выполнение задач
-const parallelTasks = gulp.parallel(task1, task2);
-
-exports.sequence = sequenceTasks;
-exports.parallel = parallelTasks;
-
+exports.serve = serve;
