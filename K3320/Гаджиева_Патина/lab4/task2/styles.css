@@ -1,0 +1,107 @@
+/* Add font files for ALS Gorizont */
+@font-face {
+  font-family: 'ALS Gorizont';
+  src: url('fonts/als-gorizont.woff2') format('woff2'),
+       url('fonts/als-gorizont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --font-family-als-gorizont: 'ALS Gorizont', sans-serif;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-als-gorizont);
+  background-color: rgba(232, 232, 247, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 24px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: rgba(125, 0, 250, 1);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(104, 0, 208, 1);
+}
+
+/* Specific styles for questions and options */
+.question-title {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 10px;
+}
+
+.option-group {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.option-group label {
+  display: inline;
+}
+
+.option-group input[type="radio"],
+.option-group input[type="checkbox"] {
+  margin: -10px 15px 0 30px;
+  vertical-align: middle;
+}
